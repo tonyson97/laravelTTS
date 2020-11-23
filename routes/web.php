@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 Route::get('/toilason', function () {
     return view('toilason');
 });
+Route::get('file-upload', [ FileUploadController::class, 'fileUpload' ])->name('file.upload');
+Route::post('file-upload', [ FileUploadController::class, 'fileUploadPost' ])->name('file.upload.post');

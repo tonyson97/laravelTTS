@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3772b35b-68f0-431c-8d19-c722008fe2eb" name="Default Changelist" comment="" />
+    <list default="true" id="3772b35b-68f0-431c-8d19-c722008fe2eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/FileUploadController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fileUpload.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +23,9 @@
         <option value="composer.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -155,6 +164,8 @@
       <updated>1606094311612</updated>
       <workItem from="1606094313081" duration="4181000" />
       <workItem from="1606098691818" duration="3944000" />
+      <workItem from="1606115745601" duration="1731000" />
+      <workItem from="1606120706826" duration="5513000" />
     </task>
     <servers />
   </component>
@@ -166,13 +177,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="713" y="345" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1606098710809" />
-    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1606096194832">
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1606122942803">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="794" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606096194832" />
+    <state x="794" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606122942803" />
     <state x="461" y="169" key="SettingsEditor" timestamp="1606107970558">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1606107970558" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1606115776212">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1606115776212" />
   </component>
 </project>
