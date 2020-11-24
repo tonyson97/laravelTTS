@@ -2,22 +2,23 @@
 <head>
     <title>Laravel 8 File Upload example</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style type="text/css">
+        h2{
+            text-align: center;
+            font-size:22px;
+            margin-bottom:50px;
+        }
+        body{
+            background:#f2f2f2;
+        }
+        .section{
+            margin-top:150px;
+            padding:50px;
+            background:#fff;
+        }
+    </style>
 </head>
-<style type="text/css">
-    h2{
-        text-align: center;
-        font-size:22px;
-        margin-bottom:50px;
-    }
-    body{
-        background:#f2f2f2;
-    }
-    .section{
-        margin-top:150px;
-        padding:50px;
-        background:#fff;
-    }
-</style>
+
 <body>
 <div class="container">
     <div class="col-md-8 section offset-md-2">

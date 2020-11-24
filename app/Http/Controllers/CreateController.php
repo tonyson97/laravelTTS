@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\File;
 
-class FileUploadController extends Controller
+class CreateController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function fileUpload()
+    public function create()
     {
-        return view('fileUpload');
+        return view('create');
     }
 
     /**
@@ -22,7 +22,7 @@ class FileUploadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function fileUploadPost(Request $request)
+    public function createPost(Request $request)
     {
         $request->validate([
             'file' => 'required|file|mimes:jpg,jpeg,bmp,png,doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip',

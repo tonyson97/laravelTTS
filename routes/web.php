@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\CreateController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,9 @@ Route::get('/', function () {
 Route::get('/toilason', function () {
     return view('toilason');
 });
-Route::get('file-upload', [ FileUploadController::class, 'fileUpload' ])->name('file.upload');
-Route::post('file-upload', [ FileUploadController::class, 'fileUploadPost' ])->name('file.upload.post');
+Route::get('create', [ CreateController::class, 'create' ])->name('file.upload');
+Route::post('create', [ CreateController::class, 'createPost' ])->name('file.upload.post');
+
+Auth::routes();
+
+Route::get('/list', [App\Http\Controllers\ListController::class, 'index'])->name('list');
