@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Redirect;
 use PDF;
 class ProductController extends Controller
@@ -122,6 +123,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $image = Product::find($id);
+        $image_patch = public_path().'/image/'.$image->image;
+        if(File::exists($image_patch)) {
+            File::delete($image_patch);
+        }
         Product::where('id',$id)->delete();
         return Redirect::to('products')->with('success','Product deleted successfully');
     }
