@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\CreateController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/toilason', function () {
-    return view('toilason');
-});
-Route::get('create', [ CreateController::class, 'create' ])->name('file.upload');
-Route::post('create', [ CreateController::class, 'createPost' ])->name('file.upload.post');
-
-Auth::routes();
-
-Route::get('/list', [App\Http\Controllers\ListController::class, 'index'])->name('list');
+Route::resource('products', ProductController::class);

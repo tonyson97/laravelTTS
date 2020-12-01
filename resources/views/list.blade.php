@@ -26,13 +26,31 @@
         justify-content: flex-end;
         margin: 10px 0;
     }
+    .action{
+        display: flex;
+    }
+    .bigsize{
+        max-width: 100% !important;
+    }
+    .my-active span{
+        background-color: #5cb85c !important;
+        color: white !important;
+        border-color: #5cb85c !important;
+    }
+    .pangi{
+        display: flex;
+        justify-content: center;
+    }
+    .pangi ul li{
+        display: inline-block;
+    }
 </style>
 @section('content')
-<div class="container">
+<div class="container bigsize">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body bigsize" >
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -46,20 +64,49 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Created AT</th>
+                                <th>Name File</th>
+                                <th>Category</th>
+                                <th>Category 1</th>
+                                <th>Category 2</th>
+                                <th>Description</th>
+                                <th>Keyword</th>
+                                <th>type</th>
+                                <th>Number page preview</th>
+                                <th>Created at</th>
+                                <th>Update at</th>
+                                <th>Action</th>
                             </tr>
                             @foreach ($files as $file)
                                 <tr>
                                     <td>{{$file->id}}</td>
                                     <td>{{$file->name}}</td>
+                                    <td>{{$file->name_file}}</td>
+                                    <td>{{$file->category}}</td>
+                                    <td>{{$file->category_1}}</td>
+                                    <td>{{$file->category_2}}</td>
+                                    <td>{{$file->description}}</td>
+                                    <td>{{$file->keyword}}</td>
+                                    <td>{{$file->numberpagepreview}}</td>
+                                    <td>{{$file->type}}</td>
                                     <td>{{$file->created_at}}</td>
+                                    <td>{{$file->updated_at}}</td>
+                                    <td>
+                                        <div class="action">
+                                            <a href="" class="btn btn-info">View</a>
+                                            <a href="" class="btn btn-danger">Edit</a>
+                                            <a href="" class="btn btn-dark">Delete</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </table>
                     </div>
-                    <div class="bt-add-new-file">
-                        <button type="button" style="border: none" onclick="location.href='{{ url('create') }}'">Add</button>
-                    </div>
+                        <div class="bt-add-new-file">
+                            <button type="button" style="border: none" onclick="location.href='{{ url('create') }}'">Add</button>
+                        </div>
+                        <div class="pangi">
+                            {{ $files->links('vendor.pagination.custom') }}
+                        </div>
                 </div>
             </div>
         </div>

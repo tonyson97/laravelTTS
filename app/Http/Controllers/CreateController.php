@@ -31,12 +31,12 @@ class CreateController extends Controller
         $fileName = time().'.'.$request->file->extension();
 
         $request->file->move(public_path('file'), $fileName);
-
+//        dd($request->input('description'));
         /* Store $fileName name in DATABASE from HERE */
-        File::create(['name' => $fileName]);
+        File::create(['name_file' => $fileName, 'name'=>$request->input('name')]);
 
         return back()
-            ->with('success','You have successfully file uplaod.')
+            ->with('success','You have successfully file upload.')
             ->with('file',$fileName);
     }
 }

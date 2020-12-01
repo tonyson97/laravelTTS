@@ -24,7 +24,7 @@ class ListController extends Controller
      */
     public function index()
     {
-        $files = DB::table('files')->get();
+        $files = DB::table('files')->paginate(15);
         return view('list', ['files'=>$files]);
     }
 }
