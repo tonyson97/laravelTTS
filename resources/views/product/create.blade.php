@@ -2,7 +2,7 @@
 @section('content')
     <h2 style="margin-top: 12px;" class="text-center">Add Product</h2>
     <br>
-    <form action="{{ route('products.store') }}" method="POST" name="add_product">
+    <form action="{{ route('products.store') }}" method="POST" name="add_product" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="row">
             <div class="col-md-12">
@@ -65,7 +65,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <strong>Số trang hiển thị</strong>
-                    <input type="text" name="viewpage" class="form-control" placeholder="Enter page">
+                    <input type="number" name="viewpage" class="form-control" placeholder="Enter page">
                     <span class="text-danger">{{ $errors->first('viewpage') }}</span>
                 </div>
             </div>

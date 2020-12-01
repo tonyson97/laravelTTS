@@ -40,7 +40,7 @@ class ProductController extends Controller
             'keyword' => 'required',
         ]);
         if ($files = $request->file('image')) {
-            $destinationPath = 'public/image/'; // upload path
+            $destinationPath = public_path('image'); // upload path
             $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
             $files->move($destinationPath, $profileImage);
             $insert['image'] = "$profileImage";
@@ -51,7 +51,7 @@ class ProductController extends Controller
         $insert['child_sub_category'] = $request->get('child_sub_category');
         $insert['description'] = $request->get('description');
         $insert['keyword'] = $request->get('keyword');
-        $insert['image'] = $request->get('image');
+//        $insert['image'] = $request->get('image');
         $insert['price'] = $request->get('price');
         $insert['viewpage'] = $request->get('viewpage');
 
@@ -96,7 +96,7 @@ class ProductController extends Controller
         ]);
         $update = ['title' => $request->title, 'category' => $request->description];
         if ($files = $request->file('image')) {
-            $destinationPath = 'public/image/'; // upload path
+            $destinationPath = public_path('image'); // upload path
             $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
             $files->move($destinationPath, $profileImage);
             $update['image'] = "$profileImage";
