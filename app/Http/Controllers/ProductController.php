@@ -52,7 +52,6 @@ class ProductController extends Controller
         $insert['child_sub_category'] = $request->get('child_sub_category');
         $insert['description'] = $request->get('description');
         $insert['keyword'] = $request->get('keyword');
-//        $insert['image'] = $request->get('image');
         $insert['price'] = $request->get('price');
         $insert['viewpage'] = $request->get('viewpage');
 
