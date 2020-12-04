@@ -2,7 +2,7 @@
 @section('content')
     <h2 style="margin-top: 12px;" class="text-center">Edit Product</h2>
     <br>
-    <form action="{{ route('products.update', $product_info->id) }}" method="POST" name="update_product">
+    <form action="{{ route('products.update', $product_info->id) }}" method="POST" name="update_product" enctype="multipart/form-data">
         {{ csrf_field() }}
         @method('PATCH')
         <div class="row">
@@ -16,14 +16,14 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <strong>Danh mục</strong>
-                    <input type="text" name="category" class="form-control" placeholder="Enter Product Code" value="{{ $product_info->category }}">
+                    <input type="text" name="category" class="form-control" placeholder="Enter Category" value="{{ $product_info->category }}">
                     <span class="text-danger">{{ $errors->first('category') }}</span>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <strong>Danh mục nho</strong>
-                    <input type="text" name="sub_category" class="form-control" placeholder="Enter Product Code" value="{{ $product_info->sub_category }}">
+                    <input type="text" name="sub_category" class="form-control" placeholder="Enter Sub Category" value="{{ $product_info->sub_category }}">
                     <span class="text-danger">{{ $errors->first('sub_category') }}</span>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <strong>tu khoa</strong>
-                    <textarea class="form-control" col="4" name="keyword" placeholder="Enter Description" >{{ $product_info->keyword }}</textarea>
+                    <textarea class="form-control" col="4" name="keyword" placeholder="Enter Keyword" >{{ $product_info->keyword }}</textarea>
                     <span class="text-danger">{{ $errors->first('keyword') }}</span>
                 </div>
             </div>
