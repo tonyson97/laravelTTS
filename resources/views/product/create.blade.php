@@ -51,8 +51,8 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <strong>File</strong>
-                    <input type="file" name="image" class="form-control" placeholder="">
-                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                    <input type="file" name="file" class="form-control" placeholder="">
+                    <span class="text-danger">{{ $errors->first('file') }}</span>
                 </div>
             </div>
             <div class="col-md-12">

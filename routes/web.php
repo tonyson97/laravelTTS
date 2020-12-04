@@ -19,6 +19,4 @@ Route::get('/', function () {
 });
 Route::resource('products', ProductController::class);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->resource('products', ProductController::class);

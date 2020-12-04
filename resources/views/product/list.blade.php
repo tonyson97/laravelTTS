@@ -17,7 +17,7 @@
                     <th>Chỉ mục</th>
                     <th>Mô tả</th>
                     <th>Từ khoá</th>
-                    <th>Hình Ảnh</th>
+                    <th>File</th>
                     <th>Giá</th>
                     <th>Số trang hiển thị</th>
                     <td colspan="2">Action</td>
@@ -33,7 +33,7 @@
                         <td>{{ $product->child_sub_category }}</td>
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->keyword }}</td>
-                        <td>{{ $product->image }}</td>
+                        <td>{{ $product->file }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->viewpage }}</td>
 {{--                        <td>{{ date('Y-m-d', strtotime($product->created_at)) }}</td>--}}

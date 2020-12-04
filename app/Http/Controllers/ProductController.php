@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Redirect;
 use PDF;
+use App\Http\Requests\ProductStoreRequest;
 class ProductController extends Controller
 {
     /**
@@ -32,19 +33,13 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'category' => 'required',
-//            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'keyword' => 'required',
-        ]);
-        if ($files = $request->file('image')) {
-            $destinationPath = public_path('image'); // upload path
-            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
-            $files->move($destinationPath, $profileImage);
-            $insert['image'] = "$profileImage";
+        if ($files = $request->file('file')) {
+            $destinationPath = public_path('file'); // upload path
+            $profilefile = date('YmdHis') . "." . $files->getClientOriginalExtension();
+            $files->move($destinationPath, $profilefile);
+            $insert['file'] = "$profilefile";
         }
         $insert['title'] = $request->get('title');
         $insert['category'] = $request->get('category');
@@ -87,19 +82,14 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductStoreRequest $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'category' => 'required',
-            'keyword' => 'required',
-        ]);
-        $update = ['title' => $request->title, 'category' => $request->description];
-        if ($files = $request->file('image')) {
-            $destinationPath = public_path('image'); // upload path
-            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
-            $files->move($destinationPath, $profileImage);
-            $update['image'] = "$profileImage";
+        $update = ['title' => $request->title, 'category' => $request->category];
+        if ($files = $request->file('file')) {
+            $destinationPath = public_path('file'); // upload path
+            $profilefile = date('YmdHis') . "." . $files->getClientOriginalExtension();
+            $files->move($destinationPath, $profilefile);
+            $update['file'] = "$profilefile";
         }
         $update['title'] = $request->get('title');
         $update['category'] = $request->get('category');
@@ -107,9 +97,10 @@ class ProductController extends Controller
         $update['child_sub_category'] = $request->get('child_sub_category');
         $update['description'] = $request->get('description');
         $update['keyword'] = $request->get('keyword');
-        $update['image'] = $request->get('image');
+        // $update['file'] = $request->get('file');
         $update['price'] = $request->get('price');
         $update['viewpage'] = $request->get('viewpage');
+
         Product::where('id',$id)->update($update);
         return Redirect::to('products')
             ->with('success','Great! Product updated successfully');
@@ -122,10 +113,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $image = Product::find($id);
-        $image_patch = public_path().'/image/'.$image->image;
-        if(File::exists($image_patch)) {
-            File::delete($image_patch);
+        $file = Product::find($id);
+        $file_patch = public_path().'/file/'.$file->file;
+        if(File::exists($file_patch)) {
+            File::delete($file_patch);
         }
         Product::where('id',$id)->delete();
         return Redirect::to('products')->with('success','Product deleted successfully');

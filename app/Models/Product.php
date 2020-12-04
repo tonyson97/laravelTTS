@@ -15,7 +15,7 @@ class Product extends Model
         'child_sub_category',
         'description',
         'keyword',
-        'image',
+        'file',
         'price',
         'viewpage',
     ];

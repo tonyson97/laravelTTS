@@ -52,12 +52,9 @@
 
             <div class="col-md-12">
                 <div class="form-group">
-                    <strong>Product Image</strong>
-                    @if($product_info->image)
-                        <img id="original" src="{{ url('image/'.$product_info->image) }}" height="70" width="70">
-                    @endif
-                    <input type="file" name="image" class="form-control" placeholder="" value="{{ $product_info->image }}">
-                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                    <strong>Product file</strong>
+                    <input type="file" name="file" class="form-control" placeholder="" value="{{ $product_info->file }}">
+                    <span class="text-danger">{{ $errors->first('file') }}</span>
                 </div>
             </div>
             <div class="col-md-12">
