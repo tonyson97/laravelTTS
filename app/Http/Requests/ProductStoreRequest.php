@@ -26,6 +26,7 @@ class ProductStoreRequest extends FormRequest
         return [
             'title' => 'required',
             'category' => 'required',
+            'file'=> 'required|file|mimes:docx,xlsx,ppt,pdf',
             'keyword' => 'required'
         ];
     }
