@@ -18,6 +18,7 @@
                     <th>Mô tả</th>
                     <th>Từ khoá</th>
                     <th>File</th>
+                    <th>Tải xuống</th>
                     <th>Giá</th>
                     <th>Số trang hiển thị</th>
                     <td colspan="2">Action</td>
@@ -34,6 +35,7 @@
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->keyword }}</td>
                         <td>{{ $product->file }}</td>
+                        <td><a download="{{$product->file}}" href="{{ Storage::url('file/'.$product->file) }}" title="file">Download</a></td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->viewpage }}</td>
 {{--                        <td>{{ date('Y-m-d', strtotime($product->created_at)) }}</td>--}}

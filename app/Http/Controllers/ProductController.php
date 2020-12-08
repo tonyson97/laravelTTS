@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\File;
 use Redirect;
 use PDF;
 use App\Http\Requests\ProductStoreRequest;
+use Response;
 class ProductController extends Controller
 {
     /**
@@ -115,10 +116,18 @@ class ProductController extends Controller
     {
         $file = Product::find($id);
         $file_patch = public_path().'/file/'.$file->file;
+        dd($file_patch);
         if(File::exists($file_patch)) {
             File::delete($file_patch);
         }
         Product::where('id',$id)->delete();
         return Redirect::to('products')->with('success','Product deleted successfully');
     }
+//
+//    public function getDownload(ProductStoreRequest $request,$id)
+//    {
+//        $file = Product::find($id);
+//        $file_patch = public_path().'/file/'.$file->file;
+//        return Response::download($file_patch);
+//    }
 }
