@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('products', ProductController::class);
+Route::get('/products/download/{id}', [ProductController::class, 'download'])->name('products.download');
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('products', ProductController::class);

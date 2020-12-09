@@ -18,10 +18,9 @@
                     <th>Mô tả</th>
                     <th>Từ khoá</th>
                     <th>File</th>
-                    <th>Tải xuống</th>
                     <th>Giá</th>
                     <th>Số trang hiển thị</th>
-                    <td colspan="2">Action</td>
+                    <td colspan="3">Action</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,7 +34,6 @@
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->keyword }}</td>
                         <td>{{ $product->file }}</td>
-                        <td><a download="{{$product->file}}" href="{{ Storage::url('file/'.$product->file) }}" title="file">Download</a></td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->viewpage }}</td>
 {{--                        <td>{{ date('Y-m-d', strtotime($product->created_at)) }}</td>--}}
@@ -47,6 +45,7 @@
                                 <button class="btn btn-danger" type="submit">Delete</button>
                             </form>
                         </td>
+                        <td> <a class="btn btn-primary"  href="{{ route('products.download', $product->id)}}"  method="post">Download</a></td>
                     </tr>
                 @endforeach
                 </tbody>
